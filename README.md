@@ -19,5 +19,6 @@ Then:
 3. Go to the index page (often localhost).
 
 ## Use Console
+##### Use console.php only for development
 ### Create Controller
 ```php console.php make:controller TestController```
