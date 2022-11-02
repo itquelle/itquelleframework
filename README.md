@@ -1,4 +1,4 @@
-# Simple MVC PHP Framework
+# itQuelle Simple MVC PHP Framework
 
 ## Requirements
 PHP >=8.x 
