@@ -20,4 +20,4 @@ Then:
 
 ## Use Console
 ### Create Controller
-php console.php make:controller TestController
+```php console.php make:controller TestController```
