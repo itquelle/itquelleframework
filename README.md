@@ -17,3 +17,7 @@ Then:
 1. Set up and run your webserver (e.g. Apache);
 2. Open your browser;
 3. Go to the index page (often localhost).
+
+## Use Console
+### Create Controller
+php console.php make:controller TestController
