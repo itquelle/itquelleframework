@@ -18,7 +18,7 @@ class PageController extends Activity {
             "kunden_items" => $kunden->getUsers(limit: 10)
         ]);
 
-        $this->view->render("test");
+        $this->view->render("index");
 
 	}
 
