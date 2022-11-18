@@ -2,6 +2,9 @@
 //site name
 const SITE_NAME = 'your-site-name';
 
+const DEV_MODE = true;
+const VERSION_NUMBER = 1.2;
+
 //App Root
 define('APP_ROOT', dirname(dirname(__FILE__)));
 const URL_ROOT = '/';

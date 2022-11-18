@@ -5,15 +5,37 @@ use Twig as TemplateEngine;
 
 class Template{
 
+    public bool $development = true;
+
     public array $templateAssignArrayItems = [];
     public TemplateEngine\Environment $view;
 
     public function __construct(){
 
+        global $routes;
+
         $loader     = new TemplateEngine\Loader\FilesystemLoader(__DIR__.'/../views');
         $this->view = new TemplateEngine\Environment($loader, [
-            //"cache" => __DIR__ . "/../../views/cache"
+            //"cache" => __DIR__ . "/../views/cache"
         ]);
+
+        // Functions
+        $assetFunction = new TemplateEngine\TwigFunction('assets', function ($asset){
+            if($this->development === true){
+                return 'assets/'.$asset . "?" . uniqid();
+            }else{
+                return 'assets/'.$asset . "?v=" . VERSION_NUMBER;
+            }
+        });
+
+        $this->view->addFunction($assetFunction);
+
+        // Get Path
+        $getPathFunction = new TemplateEngine\TwigFunction('getPath', function ($pathName) use($routes){
+            return $routes->get($pathName)->getPath();
+        });
+
+        $this->view->addFunction($getPathFunction);
 
     }
 
